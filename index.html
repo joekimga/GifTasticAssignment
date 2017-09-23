@@ -33,7 +33,7 @@
 			var person = $(this).attr("data-person");
 
 			//URL for Giphy, search quote
-			var queryURL = "https://github.com/Giphy/GiphyAPI#public-beta-key" + person + "&api_key=b7b9ca01366b4ea2bfc04546e1282d3f";
+			var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + person + "&api_key=dc6zaTOxFJmzC&limit=10";
 
 			//ajax get request
 			$.ajax({
@@ -50,7 +50,7 @@
 				for (var i = 0; i < results.length; i++) {
 
 					//only post photos with appropriate rating
-					if (results[i].rating !== "g" && results[i].rating !=="pg") {
+					if (results[i].rating !== "pg-13" && results[i].rating !=="r") {
 
 						//create div with class item
 						var gifDiv = $("<div class='item'>");
@@ -74,6 +74,24 @@
 
 						//Prepend gifDIv to the "#gifs-go-here"
 						$("#gifs-go-here").prepend(gifDiv);
+
+
+						//pause gif
+						$(".gif").on("click", function() {
+							//attr jquery method set salue of attribute on html
+							var state = $(this).attr("data-state");
+
+							if (state === "still") {
+								$(this).attr("src", $(this).attr("data-animate"));
+								$(this).attr("data-state", "animate");
+							} else {
+								$(this).attr("src", $(this).attr("data-still"));
+								$(this).attr("data-state", "still");
+							}
+
+
+
+						});
 
 
 
