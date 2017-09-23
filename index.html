@@ -25,6 +25,84 @@
 	<!--jquery cdn-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+	<script type="text/javascript">
+		
+		//Event for buttons
+		$("button").on("click", function() {
+			//this refers to button
+			var person = $(this).attr("data-person");
+
+			//URL for Giphy, search quote
+			var queryURL = "https://github.com/Giphy/GiphyAPI#public-beta-key" + person + "&api_key=b7b9ca01366b4ea2bfc04546e1282d3f";
+
+			//ajax get request
+			$.ajax({
+				url: queryURL,
+				method: "GET"
+			})
+
+			//after data is returned form api
+			.done(function(response) {
+				//storying array in results varible
+				var results = response.data;
+
+				//for loop
+				for (var i = 0; i < results.length; i++) {
+
+					//only post photos with appropriate rating
+					if (results[i].rating !== "g" && results[i].rating !=="pg") {
+
+						//create div with class item
+						var gifDiv = $("<div class='item'>");
+
+						//store result rating
+						var rating = results[i].rating;
+
+						//create paragraph with the result item's rating
+						var p = $("<p>").text("Rating: " + rating);
+
+
+						//create image tag
+						var personImage = $("<img>");
+
+						//image tag src attribute from result item
+						personImage.attr("src", results[i].images.fixed_height.url);
+
+						//append the paragraph and personImage to "gifDiv"
+						gifDiv.append(p);
+						gifDiv.append(personImage);
+
+						//Prepend gifDIv to the "#gifs-go-here"
+						$("#gifs-go-here").prepend(gifDiv);
+
+
+
+					} 
+
+
+				}
+
+			});
+
+
+
+
+
+		});
+
+
+
+
+
+
+
+
+
+		
+	</script>
+
+
+
 
 
 </body>
