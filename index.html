@@ -76,6 +76,13 @@
 						//image tag src attribute from result item
 						personImage.attr("src", results[i].images.fixed_height.url);
 
+						// Adding still/animate
+						personImage.attr("data-still", results[i].images.fixed_height_still.url);
+          				personImage.attr("data-animate", results[i].images.fixed_height.url);
+          				personImage.attr("data-state", "still");
+
+
+				
 						//append the paragraph and personImage to "gifDiv"
 						gifDiv.append(p);
 						gifDiv.append(personImage);
@@ -84,8 +91,8 @@
 						$("#gifs-go-here").prepend(gifDiv);
 
 
-						//pause gif
-						$(".gif").on("click", function() {
+						///////pause gif///////
+						$(personImage).on("click", function() {
 							//attr jquery method set salue of attribute on html
 							var state = $(this).attr("data-state");
 
