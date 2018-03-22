@@ -51,6 +51,7 @@
 			.done(function(response) {
 				//storying array in results varible
 				var results = response.data;
+				console.log(results);
 
 				//for loop
 				for (var i = 0; i < results.length; i++) {
@@ -106,22 +107,22 @@
      // </div>
 
 //add new people to array
-//function remakeButtons() {
-	//event.preventDafault();
+function remakeButtons() {
+	event.preventDafault();
 
 	//get text from input box
-	//var people = $("#inputDefault").val().trim();
+	var people = $("#inputDefault").val().trim();
 
 	//input is pushed to the top
-	//topics.push(people);
-	//console.log(topics);
-	//$("#inputDefault").val("");
+	topics.push(people);
+	console.log(topics);
+	$("#inputDefault").val("");
 
 	//call function to display gifs when pushing buttons
-	//renderButtons();
-	//displayImages();
+	renderButtons();
+	displayImages();
 
-
+};
 
 //};
 
