@@ -3,6 +3,9 @@
 
 
 
+
+
+
 		//Event for buttons
 		$("button").on("click", function() {
 			//this refers to button
@@ -22,6 +25,8 @@
 				//storying array in results varible
 				var results = response.data;
 				console.log(results);
+
+
 
 				//for loop
 				for (var i = 0; i < results.length; i++) {
@@ -77,7 +82,52 @@
 					} 
 				}
 			});
+
+
+
 		});
+
+
+
+		// This function handles events where a person button is clicked
+		//pushes user input to array and makes button for the new item in array
+		function remakeButtons() {
+	      $("#add-person").on("click", function(event) {
+	        event.preventDefault();
+	        // This line grabs the input from the textbox
+	        var person = $("#person-input").val().trim();
+
+	        // Adding person from the textbox to our array
+	        topics.push(person);
+	        console.log(topics);
+	        $("#person-input").val("");
+
+	        // Calling renderButtons which handles the processing of our person array
+	        renderButtons();
+	        displayImages();
+	      });
+		};
+
+
+
+		//Ready this on the DOM
+		$(document).ready(function() {
+			//remakeButtons();
+ 			renderButtons();
+  			displayImages();
+
+		});
+
+
+      // Adding a click event listener to all elements with a class of "person"
+      //$(document).on("click", ".person", displayMovieInfo);
+
+      // Calling the renderButtons function to display the intial buttons
+      //renderButtons();
+
+
+
+
 
      // <div >
        // <input id="add-people" type="submit">
