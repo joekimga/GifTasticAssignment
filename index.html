@@ -23,11 +23,31 @@
 	<div id="gifs-go-here">
 	</div>
 
+	
+	<!--    Add people to array and make buttons     -->
+	<!--Topics will Get Dumped Here-->
+	<div id="topics-view"></div>
+
+	<!--Rendered Buttons will get Dumped Here-->
+	<div id="buttons-view"></div>
+
+	<form id="person-form">
+      <label for="person-input">Add a Person</label>
+      <input type="text" id="person-input"><br>
+
+
+	<!-- SUBMIT BUTTON, Button triggers new person to be added-->
+	<input id="add-person" type="submit" value="Submit Button">
+    </form>
+
+
 	<!--jquery cdn-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!--JavaScript-->
+	<script type="text/javascript" src="assets/javascript/app.js"></script>
+	
 
-	<script type="text/javascript" src="assets/javascript/app.js">
-		
+		<!--  created separate javascript file and moved data there...
 		//array of buttons
 		var topics = ["Fat Bastard", "Dave Chappell", "Bill Clinton", "Milton", "Rose", "Homer Simpson", "Sir Mix a Lot", "Giorgio Tsoukalos", "Marie Antoinette", "ET", "Kim Jung Un"];
 
@@ -51,6 +71,7 @@
 			.done(function(response) {
 				//storying array in results varible
 				var results = response.data;
+				console.log(results);
 
 				//for loop
 				for (var i = 0; i < results.length; i++) {
@@ -75,6 +96,13 @@
 						//image tag src attribute from result item
 						personImage.attr("src", results[i].images.fixed_height.url);
 
+						// Adding still/animate
+						personImage.attr("data-still", results[i].images.fixed_height_still.url);
+          				personImage.attr("data-animate", results[i].images.fixed_height.url);
+          				personImage.attr("data-state", "still");
+
+
+				
 						//append the paragraph and personImage to "gifDiv"
 						gifDiv.append(p);
 						gifDiv.append(personImage);
@@ -83,8 +111,8 @@
 						$("#gifs-go-here").prepend(gifDiv);
 
 
-						//pause gif
-						$(".gif").on("click", function() {
+						///////pause gif///////
+						$(personImage).on("click", function() {
 							//attr jquery method set salue of attribute on html
 							var state = $(this).attr("data-state");
 
@@ -106,22 +134,22 @@
      // </div>
 
 //add new people to array
-//function remakeButtons() {
-	//event.preventDafault();
+function remakeButtons() {
+	event.preventDafault();
 
 	//get text from input box
-	//var people = $("#inputDefault").val().trim();
+	var people = $("#inputDefault").val().trim();
 
 	//input is pushed to the top
-	//topics.push(people);
-	//console.log(topics);
-	//$("#inputDefault").val("");
+	topics.push(people);
+	console.log(topics);
+	$("#inputDefault").val("");
 
 	//call function to display gifs when pushing buttons
-	//renderButtons();
-	//displayImages();
+	renderButtons();
+	displayImages();
 
-
+};
 
 //};
 
@@ -138,7 +166,7 @@
 
 
 		
-	</script>
+	</script>  -->
 
 
 
