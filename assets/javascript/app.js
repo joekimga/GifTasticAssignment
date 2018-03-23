@@ -1,4 +1,4 @@
-//array of buttons
+//array of buttons After Gene Helped me
 		var topics = ["Fat Bastard", "Dave Chappell", "Bill Clinton", "Milton", "Rose", "Homer Simpson", "Sir Mix a Lot", "Giorgio Tsoukalos", "Marie Antoinette", "ET", "Kim Jung Un"];
 
 
