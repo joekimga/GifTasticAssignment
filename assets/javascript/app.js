@@ -1,5 +1,6 @@
 //array of buttons before Gene’s Help
-		var topics = ["Fat Bastard", "Dave Chappell", "Bill Clinton", "Milton", "Rose", "Homer Simpson", "Sir Mix a Lot", "Giorgio Tsoukalos", "Marie Antoinette", "ET", "Kim Jung Un"];
+		var topics = ["Fat Bastard", "Dave Chappell", "Bill Clinton", "Milton", "Scooby Doo", "Homer Simpson", "Sir Mix a Lot", "Giorgio Tsoukalos", "Marie Antoinette", "ET", "Shaggy"];
+
 
 
 
