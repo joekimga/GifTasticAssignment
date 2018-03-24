@@ -1,5 +1,5 @@
-//array of buttons After Gene Helped me
-		var topics = ["Fat Bastard", "Dave Chappell", "Bill Clinton", "Milton", "Rose", "Homer Simpson", "Sir Mix a Lot", "Giorgio Tsoukalos", "Marie Antoinette", "ET", "Kim Jung Un"];
+//array of buttons before Gene’s Help
+		var topics = ["Fat Bastard", "Dave Chappell", "Bill Clinton", "Milton", "Scooby Doo", "Homer Simpson", "Sir Mix a Lot", "Giorgio Tsoukalos", "Marie Antoinette", "ET", "Shaggy"];
 
 
 
@@ -7,7 +7,7 @@
 
 
 		//Event for buttons
-		$("document").on("click", "button", function() {
+		$("button").on("click", function() {
 			//this refers to button
 			var person = $(this).attr("data-person");
 
@@ -26,7 +26,7 @@
 				var results = response.data;
 				console.log(results);
 
-			//  
+
 
 				//for loop
 				for (var i = 0; i < results.length; i++) {
@@ -87,21 +87,11 @@
 
 		});
 
-/* This is where Gene Helped me*/
-function renderButtons() { 
-	$("#buttons-view").empty();
-	for (var i = 0; i<topics.length; i++) {
-		var newButton = $("<button>");
-		newButton.text(topics[i]);
-		newButton.addClass("newButtonClass");
-		newButton.attr("data-person", topics[i]);
-		$("#buttons-view").append(newButton);
-	};
-};
+
 
 		// This function handles events where a person button is clicked
 		//pushes user input to array and makes button for the new item in array
-		
+		function remakeButtons() {
 	      $("#add-person").on("click", function(event) {
 	        event.preventDefault();
 	        // This line grabs the input from the textbox
@@ -116,7 +106,7 @@ function renderButtons() {
 	        renderButtons();
 	        displayImages();
 	      });
-	
+		};
 
 
 
