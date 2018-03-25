@@ -7,7 +7,7 @@
 
 
 		//Event for buttons
-		$("button").on("click", function() {
+		$("button").on("click",  function() {
 			//this refers to button
 			var person = $(this).attr("data-person");
 

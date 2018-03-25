@@ -18,7 +18,7 @@ In this assignment, you'll use the GIPHY API to make a dynamic web page that pop
    * Like many APIs, GIPHY requires developers to use a key to access their API data. For now, you can use their [public API key](https://github.com/Giphy/GiphyAPI#public-beta-key).
    * Make sure you switch the protocol in the query URL from **`http to https`**, or the app may not work properly when deployed to Github Pages.
 
-2. **[Watch the demo video](homework_demo.mov)**
+2. **[Watch the demo video](homework_deamo.mov)**
 
    * You should have a high-level understanding of how this assignment works before attempting to code it.
 
